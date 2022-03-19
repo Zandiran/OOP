@@ -26,7 +26,7 @@ public class Radio {
 
     public void prev() {
 
-        if (currentRadiostation - 1 == 0) {
+        if (currentRadiostation - 1 < 0) {
             this.currentRadiostation = 9;
         } else currentRadiostation = currentRadiostation - 1;
     }
@@ -39,7 +39,7 @@ public class Radio {
     }
 
     public void quieter() {
-        if (currentVolume > 1) {
+        if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
         }
     }
