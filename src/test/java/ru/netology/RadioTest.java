@@ -80,6 +80,17 @@ public class RadioTest {
     }
 
     @Test
+    public void increaseVolume2() {
+        Radio volume = new Radio();
+        volume.currentVolume = 9;
+        volume.louder();
+        int expected = 10;
+        int actual = 10;
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
     public void degreaseVolume() {
         Radio volume = new Radio();
         volume.currentVolume = 0;
@@ -89,5 +100,16 @@ public class RadioTest {
         assertEquals(expected, actual);
 
     }
+    @Test
+    public void degreaseVolume2() {
+        Radio volume = new Radio();
+        volume.currentVolume = 1;
+        volume.quieter();
+        int expected = 0;
+        int actual = 0;
+        assertEquals(expected, actual);
+
+    }
 }
+
 
