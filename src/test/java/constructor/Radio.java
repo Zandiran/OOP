@@ -1,34 +1,28 @@
-package ru.netology;
+package constructor;
 
 public class Radio {
-    private String name = "Poland";
     private int currentRadiostation;
-    private int maxStation;
+    private int maxStation = 9;
+    private int minStation = 0;
 
-
-
-    public void getMaxStation(int maxStation) {
+    public Radio(int currentRadiostation, int maxStation) {
+        this.currentRadiostation = currentRadiostation;
         this.maxStation = maxStation;
-        return;
-
     }
 
-    public void setMaxStation() {
-        this.maxStation = 9;
-        return;
-
+    public Radio(int currentRadiostation) {
+        this.currentRadiostation = currentRadiostation;
     }
 
-    public int getCurrentRadiostation() {
+    private int getCurrentRadiostation() {
         return currentRadiostation;
     }
 
     public void setCurrentRadiostation(int currentRadiostation) {
-
         if (currentRadiostation < 0) {
             return;
         }
-        if (currentRadiostation > maxStation) {
+        if (currentRadiostation > 9) {
             return;
         }
         this.currentRadiostation = currentRadiostation;
@@ -36,7 +30,7 @@ public class Radio {
 
     public void next() {
 
-        if (currentRadiostation + 1 > maxStation) {
+        if (currentRadiostation + 1 > 9) {
             this.currentRadiostation = 0;
         } else currentRadiostation = currentRadiostation + 1;
     }
@@ -44,7 +38,7 @@ public class Radio {
     public void prev() {
 
         if (currentRadiostation - 1 < 0) {
-            this.currentRadiostation = maxStation;
+            this.currentRadiostation = 9;
         } else currentRadiostation = currentRadiostation - 1;
     }
 
